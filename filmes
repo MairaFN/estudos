@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+struct Filme{
+    string nome_filme;
+    string autor;
+    int ano;
+    double valor;
+};
+
+void ler_vetor(Filme vet[], int tam){
+    for (int i=0; i<tam; i++){
+        cout<<"Nome do filme: ";
+        cin>>vet[i].nome_filme;
+        cout<<"Autor: ";
+        cin>>vet[i].autor;
+        cout<<"Ano: ";
+        cin>>vet[i].ano;
+        cout<<"Valor: ";
+        cin>>vet[i].valor;
+        cout<<"---------------------"<<endl;
+        cout<<endl;
+    }
+}
+
+
+int main(){
+    const int tam = 2;
+    Filme vetor[tam];
+    ler_vetor(vetor,tam);
+    for (int i=0; i<tam; i++){
+      cout<<"Nome do filme:"<<vetor[i].nome_filme<<endl;
+      cout<<"Nome do autor:"<<vetor[i].autor<<endl;
+      cout<<"Ano do filme:"<<vetor[i].ano<<endl;
+      cout<<"Valor do ingresso:"<<vetor[i].valor<<endl;
+      cout<<"---------------------"<<endl;
+      cout<<endl;
+    }
+    return 0;
+}
