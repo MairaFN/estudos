@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+struct Data{
+    int dia;
+    string mes;
+    int ano;
+};
+
+void ler(Data v[],int tam){
+    for(int i = 0; i<tam;i++){
+        cout<<"Digite o dia: ";
+        cin>>v[i].dia ;
+
+        cout<<"Digite o mes: ";
+        cin>>v[i].mes ;
+
+        cout<<"Digite o ano: ";
+        cin>>v[i].ano ;
+    }
+    cout<<"------------------"<<endl;
+}
+
+
+int main(){
+    int tam = 1;
+    Data vet[tam];
+    ler(vet,tam);
+    for(int i=0; i<tam;i++){
+        cout<<"Data: "<<vet[i].dia<<"/"<<vet[i].mes<<"/"<<vet[i].ano;
+    }
+}
