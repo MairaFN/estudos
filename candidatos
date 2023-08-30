@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+struct Candidato{
+    string nome;
+    string telefone;
+    int idade;
+    double nota;
+};
+
+void ler_candidato(Candidato v[],int tam){
+    for(int i=0;i<tam;i++){
+        cout<<"Nome do " << i+1 << ". candidato: ";
+        cin>>v[i].nome;
+
+        cout<<"Idade: ";
+        cin>>v[i].idade;
+
+        cout<<"Telefone: ";
+        cin>>v[i].telefone;
+
+        cout<<"Nota da prova: ";
+        cin>>v[i].nota;
+
+        cout<<"-------------------"<<endl;
+        cout<<endl;
+    }
+   
+
+}
+
+int vencedor(Candidato v[],int tam){
+    int ganhador = 0;
+    for(int i=0;i<tam;i++){
+        if (v[i].nota > v[ganhador].nota){
+            ganhador = i;
+
+        }else if(v[i].nota == v[ganhador].nota){
+            if(v[i].idade > v[ganhador].idade){
+                ganhador = i;
+            }
+        }
+    }
+    return ganhador;
+}
+
+
+int main(){
+    int tam=2;
+    Candidato vet[tam];
+    ler_candidato(vet,tam);
+    int index_vencedor;
+    index_vencedor = vencedor(vet,tam);
+    cout<<"Candidato vencedor: "<<vet[index_vencedor].nome<<endl;
+
+
+    return 0;
+}
